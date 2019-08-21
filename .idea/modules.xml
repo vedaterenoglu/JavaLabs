@@ -4,6 +4,7 @@
     <modules>
       <module fileurl="file://$PROJECT_DIR$/JavaLabs.iml" filepath="$PROJECT_DIR$/JavaLabs.iml" />
       <module fileurl="file://$PROJECT_DIR$/edaa20-workspace/Lab01/Lab01.iml" filepath="$PROJECT_DIR$/edaa20-workspace/Lab01/Lab01.iml" />
+      <module fileurl="file://$PROJECT_DIR$/edaa20-workspace/Lab02/Lab02.iml" filepath="$PROJECT_DIR$/edaa20-workspace/Lab02/Lab02.iml" />
       <module fileurl="file://$PROJECT_DIR$/edaa20-workspace/Lab03/Lab03.iml" filepath="$PROJECT_DIR$/edaa20-workspace/Lab03/Lab03.iml" />
       <module fileurl="file://$PROJECT_DIR$/edaa20-workspace/Lab04/Lab04.iml" filepath="$PROJECT_DIR$/edaa20-workspace/Lab04/Lab04.iml" />
       <module fileurl="file://$PROJECT_DIR$/edaa20-workspace/Lab06/Lab06.iml" filepath="$PROJECT_DIR$/edaa20-workspace/Lab06/Lab06.iml" />
