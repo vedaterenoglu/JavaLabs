@@ -15,7 +15,7 @@ public class ComputeFirstSpringDate {
 	    samt under de 6 första dygnen i nästkommande månad. */
 	public static int firstSpringDate(double[] a) {
 		int nbrDays = 0;
-		for (int i = 14; i < a.length; i++) {
+		for (int i = 0; i < a.length; i++) {
 			if (a[i] > 0) {
 				nbrDays++;
 				if (nbrDays == 7) {
