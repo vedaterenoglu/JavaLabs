@@ -14,6 +14,10 @@ public class DiceStatisticsFull {
             diceArray[dice] += 1;
         }
 
+        for(int i = 1; i < diceArray.length; i++){
+            System.out.println(i + ": " + diceArray[i] + " times");
+        }
+
         HashMap hm = new HashMap();
         hm.put("One", diceArray[1]);
         hm.put("Two", diceArray[2]);
