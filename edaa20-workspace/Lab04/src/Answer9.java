@@ -1,7 +1,7 @@
-import se.lth.cs.pt.window.SimpleWindow;
 import se.lth.cs.pt.square.Square;
+import se.lth.cs.pt.window.SimpleWindow;
 
-public class Answer8 {
+public class Answer9 {
     public static void main(String[] args) {
         SimpleWindow w = new SimpleWindow(600, 600, "DrawSquare");
         int x1 = 50;
@@ -16,9 +16,13 @@ public class Answer8 {
             int xstep = (x2 - x1) / 10;
             int ystep = (y2 - y1) / 10;
             for(int i=1;i<=10;i++) {
-                sq = new Square((x1 + (xstep * i)), (y1 + (ystep * i)), 100);
+                sq.erase(w);
+                sq.move(xstep, ystep);
                 sq.draw(w);
+                SimpleWindow.delay(100);
             }
+            x1 = x2;
+            y1 = y2;
         }
     }
 }

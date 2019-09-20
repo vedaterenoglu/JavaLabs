@@ -5,27 +5,54 @@ public class Turtle {
 	/** Skapar en sköldpadda som ritar i ritfönstret w. Från början 
 	    befinner sig sköldpaddan i punkten x, y med pennan lyft och 
 	    huvudet pekande rakt uppåt i fönstret (i negativ y-riktning). */
+
+	int x;
+	int y;
+	SimpleWindow w;
+	boolean isPenActive;
+	double dxd;
+	double dyd;
+	int dx;
+	int dy;
+	int angel = 90;
+
+
 	public Turtle(SimpleWindow w, int x, int y) {
+		this.x = x;
+		this.y = y;
+		this.w = w;
+		w.moveTo(x, y);
 
 	}
 
 	/** Sänker pennan. */
 	public void penDown() {
-
+	    this.isPenActive = true;
 	}
 	
 	/** Lyfter pennan. */
 	public void penUp() {
+		this.isPenActive = false;
 
 	}
 	
 	/** Går rakt framåt n pixlar i den riktning huvudet pekar. */
 	public void forward(int n) {
-
+		if (this.isPenActive = true){
+            dxd = Math.round(Math.cos(Math.toRadians(angel)) * n);
+            dyd = Math.round(Math.sin(Math.toRadians(angel)) * n);
+            dx = x + (int)dxd;
+            dy = y - (int)dyd;
+            w.lineTo(dx, dy);
+                this.x = dx;
+                this.y = dy;
+		}
 	}
 
 	/** Vrider beta grader åt vänster runt pennan. */
 	public void left(int beta) {
+	    angel = angel + beta;
+		//
 
 	}
 
