@@ -94,6 +94,9 @@ public class TurtleTest {
 		for (int i = 0; i < 360; i++) {
 			t.forward(1);
 			t.left(1);
+			System.out.println(t.x);
+			System.out.println(t.y);
+			System.out.println(t.direction);
 		}
 		int x = t.getX();
 		int y = t.getY();

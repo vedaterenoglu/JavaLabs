@@ -4,12 +4,12 @@ public class TurtleDrawSquare {
  	public static void main(String[] args) {
 		SimpleWindow w = new SimpleWindow(600, 600, "TurtleDrawSquare");
 		Turtle t = new Turtle(w, 300, 300);
-		//w.moveTo(300, 300);
 		t.penDown();
 		for (int i = 0; i < 4; i++) {
 			t.forward(100);
 			t.left(90);
-		}
+			SimpleWindow.delay(500); // It's for me during development
 
+		}
 	}
 }

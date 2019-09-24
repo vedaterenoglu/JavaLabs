@@ -9,7 +9,7 @@ public class TurtleDrawRandomFigure {
 		t.penDown();
 		for (int i = 1; i <= 4; i++) {
 			t.forward(rand.nextInt(100));
-			SimpleWindow.delay(100);
+			SimpleWindow.delay(1000); // I have changed to 1000 to see clearly the delay
 			t.left(90);
 		}
 	}
