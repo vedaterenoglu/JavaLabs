@@ -6,13 +6,11 @@ public class Turtle {
 	    befinner sig sköldpaddan i punkten x, y med pennan lyft och 
 	    huvudet pekande rakt uppåt i fönstret (i negativ y-riktning). */
 
-	SimpleWindow w;
-	double x;
-	double y;
-	int angle = 0;
-	int direction = 90;
-	int dn;
-	boolean isPenActive = false;
+	private SimpleWindow w;
+	private double x;
+	private double y;
+	private int direction = 90;
+	private boolean isPenActive = false;
 
 	// Constructor
 	public Turtle(SimpleWindow w, int x, int y) {
@@ -25,33 +23,30 @@ public class Turtle {
 
 	/** Sänker pennan. */
 	public void penDown() {
-		this.isPenActive = true;
+		isPenActive = true;
 	}
 	
 	/** Lyfter pennan. */
 	public void penUp() {
-		this.isPenActive = false;
+		isPenActive = false;
 	}
 	
 	/** Går rakt framåt n pixlar i den riktning huvudet pekar. */
 	public void forward(int n) {
-		this.dn = n;
+		w.moveTo(getX(), getY());
+		x += ((Math.cos(Math.toRadians(direction)) * n));
+		y -= ((Math.sin(Math.toRadians(direction)) * n));
 
-		if (this.isPenActive == true){
-			w.moveTo((int) Math.round(x), (int) Math.round(y));
-
-			double x1 = x + ((Math.cos(Math.toRadians(this.direction)) * dn));
-			double y1 = y - ((Math.sin(Math.toRadians(this.direction)) * dn));
-
-            w.lineTo((int) Math.round(x1), (int) Math.round(y1));
-            this.x = x1;
-            this.y = y1;
-		}
+		if (isPenActive){
+            w.lineTo(getX(), getY());
+		} else
+			w.moveTo(getX(),getY());
 	}
 
 	/** Vrider beta grader åt vänster runt pennan. */
 	public void left(int beta) {
-		this.direction = (this.direction + beta) % 360;
+		direction += beta;
+		direction %= 360;
 	}
 
 	/** Går till punkten newX, newY utan att rita. Pennans läge (sänkt
@@ -70,20 +65,16 @@ public class Turtle {
 
 	/** Tar reda på x-koordinaten för sköldpaddans aktuella position. */
 	public int getX() {
-		double x1 = this.x;
-		return (int) Math.round(x1);
+		return (int) Math.round(x);
 	}
 
  	/** Tar reda på y-koordinaten för sköldpaddans aktuella position. */
 	public int getY() {
-
-		double y1 = y;
-		return (int) Math.round(y1);
+		return (int) Math.round(y);
 	}
   
 	/** Tar reda på sköldpaddans riktning, i grader från den positiva X-axeln. */
  	public int getDirection() {
-		int dir = this.direction;
- 		return dir;
+		return direction;
 	}
 }

@@ -8,7 +8,7 @@ public class TurtleDrawSquare {
 		for (int i = 0; i < 4; i++) {
 			t.forward(100);
 			t.left(90);
-			SimpleWindow.delay(500); // It's for me during development
+			SimpleWindow.delay(300); // It's for me during development
 
 		}
 	}

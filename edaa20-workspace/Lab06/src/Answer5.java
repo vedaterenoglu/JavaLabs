@@ -10,7 +10,7 @@ public class Answer5 {
             int ang = (int)(Math.random() * 360) + 1 -180;
             t.left(ang);
             t.forward(step);
-            SimpleWindow.delay(500); // It's for me during development
+            SimpleWindow.delay(50); // It's for me during development
         }
     }
 }

@@ -1,11 +1,11 @@
 import se.lth.cs.pt.window.SimpleWindow;
 
 public class Answer6 {
-    public static double getDistance(double t1x, double t2x, double t1y, double t2y) {
+    public static double getDistance(int t1x, int t2x, int t1y, int t2y) {
         double dist;
-        dist = Math.sqrt((Math.pow((t1x - t2x), 2)) + (Math.pow((t1y - t2y), 2)));
-        System.out.println("t1.x: "+ (int)t1x + " t2.x: "+ (int)t2x + " t1.y: "+ (int)t1y + " t2.y: "+ (int)t2y  );
-        System.out.println("Distance: " + dist); // For myself to see the vale on terminal
+        dist = (Math.pow((t1x - t2x), 2)) + (Math.pow((t1y - t2y), 2));
+        //System.out.println("t1.x: "+ (int)t1x + " t2.x: "+ (int)t2x + " t1.y: "+ (int)t1y + " t2.y: "+ (int)t2y  );
+        //System.out.println("Distance: " + dist); // For myself to see the vale on terminal
         return dist;
     }
 
@@ -23,8 +23,8 @@ public class Answer6 {
         Turtle t2 = new Turtle(w, 335, 285);
         t1.penDown();
         t2.penDown();
-        double distance = getDistance(t1.x, t2.x, t1.y, t2.y);
-        while (distance >= 50) {
+        double distance = getDistance(t1.getX(), t2.getX(), t1.getY(), t2.getY());
+        while (distance >= 2500) {
             int step = getStep();
             int ang = getAngle();
             t1.left(ang);
@@ -35,8 +35,8 @@ public class Answer6 {
             t2.left(ang);
             t2.forward(step);
 
-            SimpleWindow.delay(500); // It's for me during development
-            distance = getDistance(t1.x, t2.x, t1.y, t2.y);
+            SimpleWindow.delay(5); // It's for me during development
+            distance = getDistance(t1.getX(), t2.getX(), t1.getY(), t2.getY());
         }
     }
 }
